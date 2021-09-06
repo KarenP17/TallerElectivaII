@@ -6,7 +6,7 @@ La problematica a solucionar es la creacion de una página y postulacion de repo
 ## Integrantes
 Karen Gabriela Piñeros Esguerra - Código 201621489
 
-## Instalación (CMD)
+## Instalación (CMD) (LocalHost:3000)
   ``` npm i package ```
   ## Ejecución del proyecto (CMD)
   ``` npm start ```
