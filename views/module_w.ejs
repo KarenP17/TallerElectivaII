@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<%- include('./layouts/head.ejs') %>
+<html>
+  <body class="is-preload">
+    <%- include('./layouts/header.ejs') %>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+       
+      <section id="three" class="wrapper style1 fade-up">
+        <div class="inner">
+          <h2>CREAR POST</h2>
+          <p>Tenga en cuenta que la creacion de este post será supervisada por un administrador.
+            Debe ingresar todos los datos correspondientes o no será creada su publicación.
+          </p>
+          <div class=" style1">
+            <section>
+              <form method="post" action="/new_post">
+                <div class="fields">
+                  <div class="field half">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" name="title" id="title" autofocus required/>
+                  </div>
+                  <div class="field half" style="display: none">
+                    <label for="email">Fecha</label>
+                    <input type="text" name="date" id="date" placeholder="${date}" readonly required />
+                  </div>
+                  <div class="field half">
+                    <label for="Ciudad">Ciudad</label>
+                    <select id="city" name="city"  required>
+                      <option value="Sogamoso">Sogamoso</option>
+                      <option value="Sogamoso">Tunja</option>
+                      <option value="Sogamoso">Duitama</option>
+                    </select>
+                 
+                  </div>
+
+                 
+                  <div class="field half">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" name="Name" id="Name"   required/>
+                  </div>
+                  <div class="field half">
+                    <label for="email">Numero Contacto</label>
+                    <input type="text" name="Numbers_Contact" id="Numbers_Contact"  required/>
+                  </div>
+                  <div class="field half">
+                    <label for="Apellido">Apellido</label>
+                    <input type="text" name="Last_Name" id="Last_Name"  required/>
+                  </div>
+                  
+
+                  <div class="field half">
+                    <label for="email">Imagen</label>
+                    <input type="file" name="poster" id="poster"/>
+                  </div>
+                  <div class="field">
+                    <label for="message">Descripcion</label>
+                    <textarea name="description" id="description" rows="5"  required></textarea>
+                  </div>
+                </div>
+                <ul class="actions">
+                  <li><a href="" class="button submit" type="submit" >Crear Post</a></li>
+                </ul>
+              </form>
+            </section>
+
+    </div>
+
+    <%- include('./layouts/footer.ejs') %> <%- include('./layouts/scripts.ejs')
+    %>
+  </body>
+</html>

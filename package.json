@@ -1,0 +1,20 @@
+{
+  "name": "-Nodejs_ejs_interfaz-master",
+  "version": "1.0.0",
+  "description": "Aplicativo web desarrollado en NodeJS para la asignatura de Electiva II dirigida por el Ingeniero Jairo Armando Riaño.  La problematica a solucionar es la creacion de una página y postulacion de reporte de la misma acerca de pérdidas de tipo documentos u objetos personales en el departamento de Boyacá, específicamente en las ciudades de Tunja, Duitama y Sogamoso.",
+  "main": "app.js",
+  "dependencies": {
+    "alert": "^5.0.10",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "package": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<%- include('./layouts/head.ejs') %>
+<html>
+  <body class="is-preload">
+    <%- include('./layouts/header.ejs') %>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <section id="three" class="wrapper style1 fade-up">
+        <div class="inner">
+          <h1>PUBLICACIONES SOBRE DOCUMENTOS</h1>
+          <p>
+            En este apartado podrá realizar la busqueda correspondiente de documentos pérdidos que han
+            sido públicados. Además podrá visualizar información respectiva sobre el documento en el
+            foro.
+          </p>
+          <div class="split style1">
+            <section>
+              <form method="POST" action="/search_posts">
+                <div class="field half">
+                  <label for="filterBy">Buscar por:</label>
+                  <select name="filterBy" id="demo-category">
+                    <% if(filter) { for(let i in filter) {%>
+                    <option value="<%=filter[i].clave%>">
+                      <%= filter[i].valor%>
+                    </option>
+
+                    <% } } %>
+                  </select>
+                  <label for="wordFilter">Ingrese la palabra que desea buscar</label>
+                  <input type="text" name="wordFilter" />
+                </div>
+
+                <div style="height: 10px"></div>
+                <div class="col-6 col-12-medium">
+                  <ul class="actions stacked">
+                    <li><a class="button submit primary fit">Buscar</a></li>
+                  </ul>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <section>
+            <h2>Publicaciones</h2>
+            <% if (posts.length > 0) { %> <% for(let i in posts) {%>
+
+            <section id="one" class="wrapper style2 spotlights">
+              <section>
+                <a href="#" class="image"
+                  ><img
+                    src="<%= posts[i].poster%>"
+                    alt=""
+                    data-position="center center"
+                /></a>
+                <div class="content">
+                  <div class="inner">
+                    <h3><strong>Titulo: </strong><%= posts[i].title%></h3>
+                    <p>
+                      <br /><strong>Fecha: </strong> <%= posts[i].date%>
+                      <br /><strong>Descripción: </strong> <%=
+                      posts[i].description%> <br /><strong>Ciudad: </strong> <%=
+                      posts[i].city%> <br /><strong>Nombres: </strong> <%=
+                      posts[i].Name%> <br /><strong>Apellidos: </strong> <%=
+                      posts[i].Last_Name%> <br /><strong
+                        >Número Contacto:
+                      </strong>
+                      <%= posts[i].Numbers_Contact%> <br /><strong
+                        >Tipo:
+                      </strong>
+                      <%= posts[i].type%>
+                    </p>
+
+                    <form method="POST" action="/foro">
+                      <input
+                        style="height: 0"
+                        type="text"
+                        name="id"
+                        value="<%= posts[i].id%>"
+                        readonly
+                      />
+                      <br />
+                      <ul class="actions">
+                        <li>
+                          <a href="/foro" class="button submit">Foro</a>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <hr />
+            <% } %> <% }else { %> No hay publicaciones <% } %>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <%- include('./layouts/footer.ejs') %> <%- include('./layouts/scripts.ejs')
+    %>
+  </body>
+</html>
